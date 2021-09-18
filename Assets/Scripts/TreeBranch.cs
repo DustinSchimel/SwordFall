@@ -21,6 +21,7 @@ public class TreeBranch : MonoBehaviour
         else if(health >= 0)
         {
             //Shatter the branch, then destroy it
+            Destroy(gameObject);
             return true;
         }
         return false;
