@@ -58,14 +58,23 @@ public class MovePlayer : MonoBehaviour
         }
         else if(other.CompareTag("SpiderWeb"))
         {
-            //"Blur warp" a large way upwards and deduct from the score
+            //"Blur warp" a large way upwards and deduct from the score, and delete all existing
+            // platforms and enemies
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        leftMovement = true;
-        rightMovement = true;
+        if (other.tag.Equals("Left Wall"))
+        {
+            leftMovement = true;
+        }
+        else if (other.tag.Equals("Right Wall"))
+        {
+            rightMovement = true;
+        }
+        //leftMovement = true;
+        //rightMovement = true;
     }
 
     void moveCharacter(Vector3 direction)
