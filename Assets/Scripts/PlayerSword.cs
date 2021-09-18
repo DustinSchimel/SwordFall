@@ -29,15 +29,19 @@ public class PlayerSword : MonoBehaviour
         }
         else if(other.CompareTag("Mushroom"))
         {
-            //Bounce up but take damage
+            //Bounce up but take damage, and trigger the mushroom's particle spores
         }
         else if(other.CompareTag("BounceMushroom"))
         {
-            //Bounce up a lot
+            //Bounce up a lot and trigger the bounce mushroom's spring animation
         }
         else if(other.CompareTag("TreeBranch"))
         {
             //Deduct 1 HP from the tree branch, and if the tree branch still has HP, bounce up
+            if(!other.GetComponent<TreeBranch>().DeductHP())
+            {
+                //Bounce up
+            }
         }
         else if(other.CompareTag("SpiderWeb"))
         {
@@ -52,6 +56,7 @@ public class PlayerSword : MonoBehaviour
         {
             //Reflect the kernel back straight downwards and activate its code to deactivate the
             // spawning corn
+            other.GetComponent<CornKernel>().reflected = true;
         }
         else if(other.CompareTag("LeafPile"))
         {
