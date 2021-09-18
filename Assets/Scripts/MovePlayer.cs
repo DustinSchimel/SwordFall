@@ -21,6 +21,6 @@ public class MovePlayer : MonoBehaviour
         this.GetComponent<Rigidbody>().drag -= 0.00001f;
 
         // Debug logs for sanity
-        Debug.Log(this.transform.position.z);
+        // Debug.Log(this.transform.position.y);
     }
 }
