@@ -73,8 +73,6 @@ public class MovePlayer : MonoBehaviour
         {
             rightMovement = true;
         }
-        //leftMovement = true;
-        //rightMovement = true;
     }
 
     void moveCharacter(Vector3 direction)
