@@ -37,6 +37,29 @@ public class MovePlayer : MonoBehaviour
         {
             rightMovement = false;
         }
+
+        if(other.CompareTag("Spikes") || other.CompareTag("Corn") 
+            || other.CompareTag("Mushroom") || other.CompareTag("BounceMushroom"))
+        {
+            //Get flung upwards and take damage
+        }
+        else if(other.CompareTag("TreeBranch"))
+        {
+            //Destroy the tree branch and take damage
+        }
+        else if(other.CompareTag("LeafPile"))
+        {
+            //Destory the leaf pile, cause the attached platforms to swing down towards the walls,
+            // and take damage
+        }
+        else if(other.CompareTag("Pumpkin") || other.CompareTag("CornKernel"))
+        {
+            //Destroy the projectile and take damage
+        }
+        else if(other.CompareTag("SpiderWeb"))
+        {
+            //"Blur warp" a large way upwards and deduct from the score
+        }
     }
 
     private void OnTriggerExit(Collider other)
