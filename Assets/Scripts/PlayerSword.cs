@@ -37,7 +37,7 @@ public class PlayerSword : MonoBehaviour
         }
         else if(other.CompareTag("TreeBranch"))
         {
-            //Bounce up and deduct 1 HP from the tree branch
+            //Deduct 1 HP from the tree branch, and if the tree branch still has HP, bounce up
         }
         else if(other.CompareTag("SpiderWeb"))
         {
@@ -50,8 +50,8 @@ public class PlayerSword : MonoBehaviour
         }
         else if(other.CompareTag("CornKernel"))
         {
-            //Reflect the kernel back straight downwards and activate its code to kill the spawning
-            // corn
+            //Reflect the kernel back straight downwards and activate its code to deactivate the
+            // spawning corn
         }
         else if(other.CompareTag("LeafPile"))
         {

@@ -49,18 +49,20 @@ public class GeneratePlatform : MonoBehaviour
 
             if(rand == 0 || rand == 2) //A left or right platform
             {
-                //Randomly create a 1/3 length spider web in the gap next to the platform
+                //Randomly create a 1/3 length spider web or tree branch in the gap next to the
+                // platform
             }
             else //A middle platform
             {
-                //Randomly create a 1/4 length spider web in each gap next to the platform
+                //Randomly create a 1/4 length spider web or tree branch in each gap next to the
+                // platform
             }
         }
         else if(rand == 3 || rand == 4) //Bounce Mushroom platforms
         {
             //Create a Bounce Mushroom and place it randomly in the lower section of the platform
-            //Randomly create a 1/4 length spider web in the gap next to the top and bottom of the
-            // upper section of the platform
+            //Randomly create a 1/4 length spider web  or tree branch in the gap next to the top
+            // and bottom of the upper section of the platform
         }
         else if(rand == 5 || rand == 5 || rand == 6) //Leaf Pile platforms
         {
