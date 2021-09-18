@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 0c5cc5d4f5385fa4eafa4513c329c252
+guid: 4e8321c038f19f74cb890fa3b10bb31f
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Jump_Ani
+    second: Fall_Ani
   externalObjects: {}
   materials:
     materialImportMode: 2
-    materialName: 1
+    materialName: 0
     materialSearch: 1
     materialLocation: 1
   animations:
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jump_Ani
+      name: Fall_Ani
       takeName: Take 001
       internalID: 0
-      firstFrame: 1
-      lastFrame: 40
+      firstFrame: 80
+      lastFrame: 110
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -62,7 +62,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -73,8 +73,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
