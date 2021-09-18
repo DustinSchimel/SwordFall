@@ -11,11 +11,11 @@ public class MovePlayer : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            this.transform.Translate(Vector3.left * Time.deltaTime * multiplier);
+            this.transform.Translate(Vector3.right * Time.deltaTime * multiplier);
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            this.transform.Translate(Vector3.right * Time.deltaTime * multiplier);
+            this.transform.Translate(Vector3.left * Time.deltaTime * multiplier);
         }
 
         this.GetComponent<Rigidbody>().drag -= 0.00001f;
