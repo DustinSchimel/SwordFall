@@ -7,6 +7,15 @@ TagManager:
   - Trigger
   - Right Wall
   - Left Wall
+  - Spikes
+  - Mushroom
+  - BounceMushroom
+  - Corn
+  - CornKernel
+  - SpiderWeb
+  - Pumpkin
+  - TreeBranch
+  - LeafPile
   layers:
   - Default
   - TransparentFX
