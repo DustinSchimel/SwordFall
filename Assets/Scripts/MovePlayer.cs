@@ -18,6 +18,9 @@ public class MovePlayer : MonoBehaviour
             this.transform.Translate(Vector3.right * Time.deltaTime * multiplier);
         }
 
+        this.GetComponent<Rigidbody>().drag -= 0.00001f;
 
+        // Debug logs for sanity
+        Debug.Log(this.transform.position.z);
     }
 }
