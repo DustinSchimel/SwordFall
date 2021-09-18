@@ -38,6 +38,10 @@ public class PlayerSword : MonoBehaviour
         else if(other.CompareTag("TreeBranch"))
         {
             //Deduct 1 HP from the tree branch, and if the tree branch still has HP, bounce up
+            if(!other.GetComponent<TreeBranch>().DeductHP())
+            {
+                //Bounce up
+            }
         }
         else if(other.CompareTag("SpiderWeb"))
         {
