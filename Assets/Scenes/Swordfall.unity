@@ -3351,7 +3351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 340265314}
   platform: {fileID: 4893508291332613613, guid: bb58f75f43b2257459b7863518c79d94, type: 3}
-  secondsuntilDestroy: 30
+  secondsuntilDestroy: 60
   platformSpawnDistanceRange: {x: 80, y: 100}
   mushroom: {fileID: 8205139550299845392, guid: d703c43efe92fd4488ca5ac0b865adc9, type: 3}
   mushroomSpawnChance: 10
