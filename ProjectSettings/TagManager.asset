@@ -18,6 +18,7 @@ TagManager:
   - LeafPile
   - Platform
   - SwordDownHitbox
+  - Background
   layers:
   - Default
   - TransparentFX
