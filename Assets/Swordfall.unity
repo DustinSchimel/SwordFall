@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -284,7 +284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 514.3015, y: -21.241089}
+  m_AnchoredPosition: {x: 437, y: -40}
   m_SizeDelta: {x: 70.7962, y: 33.6214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177159644
@@ -309,12 +309,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 48d8b14f4eb14c245a9a4d68c6b91946, type: 3}
-    m_FontSize: 25
+    m_FontSize: 95
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
-    m_Alignment: 2
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -542,7 +542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 444.93484, y: -21.241089}
+  m_AnchoredPosition: {x: 176, y: -31}
   m_SizeDelta: {x: 66.053, y: 33.6214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412198133
@@ -567,7 +567,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 48d8b14f4eb14c245a9a4d68c6b91946, type: 3}
-    m_FontSize: 25
+    m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -1197,7 +1197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 37.7, y: -14.3}
+  m_AnchoredPosition: {x: 37.69995, y: -14.299988}
   m_SizeDelta: {x: 131.0977, y: 47.6355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &864320407
@@ -2739,12 +2739,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868461322}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2000af724bd822a43b8c0ba5f00a1dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 5901511926561880218, guid: b3af032aaa2b33e4bb047574e03703de, type: 3}
+  pumpkin: {fileID: 1959898978945160726, guid: 142c26f24268e1647bb6ed4a6aead398, type: 3}
   player: {fileID: 340265314}
 --- !u!4 &1868461324
 Transform:
