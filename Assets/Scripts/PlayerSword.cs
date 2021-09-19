@@ -21,7 +21,7 @@ public class PlayerSword : MonoBehaviour
             playerRigidbody.AddForce(transform.up * bounceKnockback);
             score.text = (int.Parse(score.text) + spikeBounceBonus).ToString();
 
-            /*int rand = Random.Range(0, 3);
+            int rand = Random.Range(0, 3);
 
             if (rand == 0)
             {
@@ -34,7 +34,7 @@ public class PlayerSword : MonoBehaviour
             else
             {
                 SoundManagerScript.PlaySound("sword3");
-            }*/
+            }
         }
         else if(other.CompareTag("Mushroom"))
         {
