@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerSword : MonoBehaviour
 {
     public Rigidbody playerRigidbody;   //The Rigidbody of the player character
+    public MovePlayer movePlayer;
     public float bounceKnockback;
 
     public Text score;
@@ -27,6 +28,7 @@ public class PlayerSword : MonoBehaviour
             playerRigidbody.velocity = Vector3.zero;
             playerRigidbody.AddForce(transform.up * bounceKnockback);
             other.GetComponent<Animator>().SetTrigger("spores");
+            movePlayer.TakeDamage();
         }
         else if(other.CompareTag("BounceMushroom"))
         {

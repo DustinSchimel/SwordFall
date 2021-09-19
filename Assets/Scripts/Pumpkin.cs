@@ -16,9 +16,7 @@ public class Pumpkin : MonoBehaviour
     // If hit with attack from the player, health decreases by 1;
     private void OnTriggerEnter(Collider other)
     {
-
-        //TODO: Change tag to whatever sword will be
-        if (other.tag == "Untagged")
+        if (other.CompareTag("SwordDownHitbox"))
         {
 
             health--;

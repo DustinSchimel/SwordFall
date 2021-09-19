@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 340265318}
+  movePlayer: {fileID: 340265315}
   bounceKnockback: 600
   score: {fileID: 177159644}
   spikeBounceBonus: 100
@@ -456,6 +457,7 @@ MonoBehaviour:
   maxFallSpeed: 50
   swordHitbox: {fileID: 104646796}
   swordActiveTime: 0.1
+  hp: 3
   hpText: {fileID: 864320407}
   swingCooldownTime: 0.75
   damageTime: 1

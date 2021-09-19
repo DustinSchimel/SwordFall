@@ -16,7 +16,7 @@ public class MovePlayer : MonoBehaviour
     public GameObject swordHitbox;
     public float swordActiveTime;
 
-    private int hp = 3;
+    public int hp = 3;
     public Text hpText;
 
     private bool leftMovement = true;
@@ -70,7 +70,8 @@ public class MovePlayer : MonoBehaviour
             rb.velocity = Vector3.zero;
             rb.AddForce(transform.up * spikeKnockback);
             animator.SetTrigger("isJumping");
-            StartCoroutine(TakeDamage());
+            TakeDamage();
+            StartCoroutine(DamageKnockback());
         }
         else if (other.CompareTag("TreeBranch"))
         {
@@ -143,7 +144,7 @@ public class MovePlayer : MonoBehaviour
         yield return new WaitForSeconds(swingCooldownTime);
         swingCd = true;
     }
-    private IEnumerator TakeDamage()
+    public void TakeDamage()
     {
         hp--;
         if(hp <= 0)
@@ -154,7 +155,10 @@ public class MovePlayer : MonoBehaviour
         {
             hpText.text = "HP: " + hp;
         }
+    }
 
+    private IEnumerator DamageKnockback()
+    {
         playerCollider.enabled = false;
         swordHitbox.SetActive(false);
         swingCd = false;

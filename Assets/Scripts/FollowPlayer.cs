@@ -10,6 +10,18 @@ public class FollowPlayer : MonoBehaviour
     float cameraY;
     float cameraZ;
 
+    private void OnEnable()
+    {
+        if (gameObject.CompareTag("SwordDownHitbox"))
+        {
+            cameraX = player.transform.position.x;
+            cameraY = player.transform.position.y - 1f;
+            cameraZ = player.transform.position.z;
+
+            this.transform.position = new Vector3(cameraX, cameraY, cameraZ);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
