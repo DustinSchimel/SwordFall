@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
             if(async.progress >= 0.9f)
             {
                 async.allowSceneActivation = true;
+                Time.timeScale = 1f;
             }
             yield return null;
         }
