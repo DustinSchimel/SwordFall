@@ -33,6 +33,10 @@ public class GeneratePlatform : MonoBehaviour
     public float mushroomSpawnChance;
     public float mushroomYPosition;
 
+    public GameObject corn;
+    public float cornSpawnChance;
+    public float cornYPosition;
+
     private enum PlatformTypes
     {
         LeftNormal,
@@ -140,7 +144,8 @@ public class GeneratePlatform : MonoBehaviour
                 }
                 else
                 {
-                    if(Random.Range(0f, 100f) <= mushroomSpawnChance)
+                    float seed = Random.Range(0f, 100f);
+                    if (seed <= mushroomSpawnChance)
                     {
                         Debug.Log("Mushroom created");
                         lastPlatform.transform.GetChild(i).gameObject.SetActive(false);
@@ -148,6 +153,17 @@ public class GeneratePlatform : MonoBehaviour
                         Vector3 pos = lastPlatform.transform.GetChild(i).localPosition;
                         pos.y = mushroomYPosition;
                         tempMushroom.localPosition = pos;
+
+                        noEnemy = true;
+                    }
+                    else if (seed <= mushroomSpawnChance + cornSpawnChance)
+                    {
+                        Debug.Log("Corn created");
+                        lastPlatform.transform.GetChild(i).gameObject.SetActive(false);
+                        Transform tempCorn = Instantiate(corn, lastPlatform.transform).transform;
+                        Vector3 pos = lastPlatform.transform.GetChild(i).localPosition;
+                        pos.y = cornYPosition;
+                        tempCorn.localPosition = pos;
 
                         noEnemy = true;
                     }

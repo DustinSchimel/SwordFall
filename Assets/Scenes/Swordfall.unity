@@ -3136,6 +3136,9 @@ MonoBehaviour:
   mushroom: {fileID: 8205139550299845392, guid: d703c43efe92fd4488ca5ac0b865adc9, type: 3}
   mushroomSpawnChance: 10
   mushroomYPosition: 1.12
+  corn: {fileID: 8205139550299845392, guid: d703c43efe92fd4488ca5ac0b865adc9, type: 3}
+  cornSpawnChance: 10
+  cornYPosition: 1.12
 --- !u!82 &1868461326
 AudioSource:
   m_ObjectHideFlags: 0
