@@ -72,6 +72,17 @@ public class MovePlayer : MonoBehaviour
             Debug.Log("Hit Spikes");
             rb.velocity = Vector3.zero;
             rb.AddForce(transform.up * spikeKnockback);
+
+            int rand = Random.Range(0, 2);
+            if (rand == 0)
+            {
+                SoundManagerScript.PlaySound("ouch1");
+            }
+            else
+            {
+                SoundManagerScript.PlaySound("ouch2");
+            }
+
             animator.SetTrigger("isJumping");
             TakeDamage();
             StartCoroutine(DamageKnockback());
