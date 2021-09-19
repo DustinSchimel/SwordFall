@@ -7,7 +7,20 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("SwordFall");
+        StartCoroutine(LoadMainGame());
+    }
+    private IEnumerator LoadMainGame()
+    {
+        AsyncOperation async = SceneManager.LoadSceneAsync("Swordfall");
+        async.allowSceneActivation = false;
+        while(!async.isDone)
+        {
+            if(async.progress >= 0.9f)
+            {
+                async.allowSceneActivation = true;
+            }
+            yield return null;
+        }
     }
     public void QuitGame()
     {
