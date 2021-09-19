@@ -5,18 +5,26 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
-
+    public GameObject player;
     public Text score;
     int count = 0;
+    float lowest_point;
     // Start is called before the first frame update
     void Start()
     {
-        
+        lowest_point = player.transform.position.y;
     }
 
     private void FixedUpdate()
     {
-        count+=1;
+        // Increase player's score if they are descending
+        if(player.transform.position.y < lowest_point)
+        {
+            lowest_point = player.transform.position.y;
+            count += 1;
+        }
+        
+        // Update the player's score
         score.text = count.ToString();
     }
 }
