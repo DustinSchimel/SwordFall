@@ -337,6 +337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6268465493242186740}
+  - component: {fileID: 1196555091162553551}
   m_Layer: 0
   m_Name: Corn_enemy
   m_TagString: Untagged
@@ -362,3 +363,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1196555091162553551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6752514919977898318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b867098db291194bb0f0791217a1099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kernel: {fileID: 5322532608536123729, guid: 30a60dab94370474ba404e9d47c6cde0, type: 3}
+  kernelLaunchForce: 3
+  player: {fileID: -8679921383154817045, guid: a2948a91523c8564cacc880950e48592, type: 3}
+  unitConversion: 0
