@@ -44,6 +44,7 @@ public class MovePlayer : MonoBehaviour
             || other.CompareTag("Mushroom") || other.CompareTag("BounceMushroom"))
         {
             Debug.Log("Hit Spikes");
+            rb.velocity = Vector3.zero;
             rb.AddForce(transform.up * spikeKnockback);
         }
         else if(other.CompareTag("TreeBranch"))
