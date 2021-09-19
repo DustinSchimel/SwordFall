@@ -32,7 +32,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.CompareTag("MainCamera"))
+        if (gameObject.CompareTag("MainCamera") || gameObject.CompareTag("Background"))
         {
             cameraY = player.transform.position.y - 15;
         }
