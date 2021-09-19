@@ -14,9 +14,11 @@ public class Pumpkin : MonoBehaviour
     private int health = 3;    //The HP of this pumpkin
 
     // If hit with attack from the player, health decreases by 1;
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.name == "NewPumpkinKid")
+
+        //TODO: Change tag to whatever sword will be
+        if (other.tag == "Untagged")
         {
 
             health--;
@@ -35,7 +37,6 @@ public class Pumpkin : MonoBehaviour
             }
             
         }
-        Debug.Log("Hit a player");
     }
     
     private void OnDestroy()
