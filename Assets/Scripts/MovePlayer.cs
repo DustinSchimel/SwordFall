@@ -22,6 +22,9 @@ public class MovePlayer : MonoBehaviour
 
     public GameObject inGameUI;
     public GameObject gameOverUI;
+    public Image health1;
+    public Image health2;
+    public Image health3;
 
     private bool leftMovement = true;
     private bool rightMovement = true;
@@ -37,6 +40,9 @@ public class MovePlayer : MonoBehaviour
         animator = GetComponent<Animator>();
         swingCd = true;
         swordHitbox.SetActive(false);
+        health1.enabled = true;
+        health2.enabled = true;
+        health3.enabled = true;
     }
 
     // Update is called once per frame
@@ -162,6 +168,15 @@ public class MovePlayer : MonoBehaviour
     public void TakeDamage()
     {
         hp--;
+        if (hp == 2)
+        {
+            health3.enabled = false;
+        }
+        else if (hp == 1)
+        {
+            health2.enabled = false;
+        }
+
         if(hp <= 0)
         {
             Time.timeScale = 0f;
@@ -169,6 +184,7 @@ public class MovePlayer : MonoBehaviour
             inGameUI.SetActive(false);
             gameOverUI.SetActive(true);
             gameOverUI.transform.GetChild(1).GetComponent<Text>().text = score.ToString();
+
         }
         else
         {
