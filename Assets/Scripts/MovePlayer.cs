@@ -20,6 +20,7 @@ public class MovePlayer : MonoBehaviour
     private bool swingCd;
     public float swingCooldownTime;
     public float damageTime;
+    private bool invulnerable;
 
     private void Start()
     {
@@ -140,9 +141,11 @@ public class MovePlayer : MonoBehaviour
     }
     private IEnumerator TakeDamage()
     {
+        playerCollider.enabled = false;
         swordHitbox.SetActive(false);
         swingCd = false;
         yield return new WaitForSeconds(damageTime);
         swingCd = true;
+        playerCollider.enabled = true;
     }
 }

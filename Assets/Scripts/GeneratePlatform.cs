@@ -14,6 +14,16 @@ public class GeneratePlatform : MonoBehaviour
     private float playerZ;
     private float greatestPlayerY;
 
+    public Vector2 platformSpawnDistanceRange;  //The min and max vertical distance platforms can
+                                                // spawn from the player
+    private float PlatformSpawnDistance
+    {
+        get
+        {
+            return Random.Range(platformSpawnDistanceRange.x, platformSpawnDistanceRange.y);
+        }
+    }
+
     private GameObject lastPlatform;
     private Dictionary<GameObject, int> platformList;
     private List<KeyValuePair<GameObject, int>> platformsToAge;
@@ -23,14 +33,14 @@ public class GeneratePlatform : MonoBehaviour
     {
         LeftNormal,
         MiddleNormal,
-        RightNormal,
+        RightNormal/*,
         LeftBM,         //Bounce Mushroom platform with low and high sections
         RightBM,        //Bounce Mushroom platform with low and high sections
         LeftLP,         //Leaf Pile platforms, with the left platform 1/3 of the screen and the
                         // right platform 2/3 of the screen
         MiddleLP,       //Leaf Pile platforms, with each platform 1/2 of the screen
         RightLP,        //Leaf Pile platforms, with the left platform 2/3 of the screen and the
-                        // right platform 1/3 of the screen
+                        // right platform 1/3 of the screen*/
     }
 
     private void Start()
@@ -42,6 +52,12 @@ public class GeneratePlatform : MonoBehaviour
         playerY = player.transform.position.y;
         platformList = new Dictionary<GameObject, int>();
         platformsToAge = new List<KeyValuePair<GameObject, int>>();
+
+        //Spawn three starting platforms on-screen
+        for(int i = 0; i < 3; i++)
+        {
+            CreatePlatform(PlatformSpawnDistance / 4 * (i + 1));
+        }
     }
 
     private void Update()
@@ -52,13 +68,13 @@ public class GeneratePlatform : MonoBehaviour
         {
             greatestPlayerY = playerY;
 
-            if (lastPlatform != null && (lastPlatform.transform.position.y > playerY + 20))
+            if (lastPlatform != null && (lastPlatform.transform.position.y > playerY - 60))
             {
-                CreatePlatform();
+                CreatePlatform(PlatformSpawnDistance);
             }
             else if (lastPlatform == null)
             {
-                CreatePlatform();
+                CreatePlatform(PlatformSpawnDistance);
             }
         }
 
@@ -66,11 +82,11 @@ public class GeneratePlatform : MonoBehaviour
                   // normal platform heights below the prior platform, with 3-6 being favored. If
                   // the height is greater than 6, generate a pumpkin
         {
-            CreatePlatform();
+            CreatePlatform(PlatformSpawnDistance);
         }
     }
 
-    private void CreatePlatform()
+    private void CreatePlatform(float spawnDistance)
     {
         int rand = Random.Range(0, platformTypesLength);
 
@@ -87,7 +103,7 @@ public class GeneratePlatform : MonoBehaviour
                 //Randomly create a 1/3 length spider web or tree branch in the gap next to the
                 // platform
 
-                lastPlatform = Instantiate(platform, new Vector3(-10.6f, playerY - 150f, 0f), Quaternion.identity);
+                lastPlatform = Instantiate(platform, new Vector3(-10.6f, playerY - spawnDistance, 0f), Quaternion.identity);
 
                 Object.Destroy(lastPlatform, secondsuntilDestroy);
             }
@@ -96,7 +112,7 @@ public class GeneratePlatform : MonoBehaviour
                 //Randomly create a 1/3 length spider web or tree branch in the gap next to the
                 // platform
 
-                lastPlatform = Instantiate(platform, new Vector3(0, playerY - 150f, 0f), Quaternion.identity);
+                lastPlatform = Instantiate(platform, new Vector3(0, playerY - spawnDistance, 0f), Quaternion.identity);
 
                 Object.Destroy(lastPlatform, secondsuntilDestroy);
             }
@@ -105,7 +121,7 @@ public class GeneratePlatform : MonoBehaviour
                 //Randomly create a 1/4 length spider web or tree branch in each gap next to the
                 // platform
 
-                lastPlatform = Instantiate(platform, new Vector3(10.6f, playerY - 150f, 0f), Quaternion.identity);
+                lastPlatform = Instantiate(platform, new Vector3(10.6f, playerY - spawnDistance, 0f), Quaternion.identity);
 
                 Object.Destroy(lastPlatform, secondsuntilDestroy);
             }

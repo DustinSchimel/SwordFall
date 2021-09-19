@@ -647,6 +647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LongPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 4893508291332613613, guid: bb58f75f43b2257459b7863518c79d94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb58f75f43b2257459b7863518c79d94, type: 3}
 --- !u!1001 &465403134
@@ -2770,6 +2774,7 @@ MonoBehaviour:
   player: {fileID: 340265314}
   platform: {fileID: 4893508291332613613, guid: bb58f75f43b2257459b7863518c79d94, type: 3}
   secondsuntilDestroy: 30
+  platformSpawnDistanceRange: {x: 60, y: 80}
 --- !u!82 &1868461326
 AudioSource:
   m_ObjectHideFlags: 0
