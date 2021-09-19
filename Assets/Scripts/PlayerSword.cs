@@ -20,6 +20,21 @@ public class PlayerSword : MonoBehaviour
             playerRigidbody.velocity = Vector3.zero;
             playerRigidbody.AddForce(transform.up * bounceKnockback);
             score.text = (int.Parse(score.text) + spikeBounceBonus).ToString();
+
+            int rand = Random.Range(0, 3);
+
+            if (rand == 0)
+            {
+                SoundManagerScript.PlaySound("sword1");
+            }
+            else if (rand == 2)
+            {
+                SoundManagerScript.PlaySound("sword2");
+            }
+            else
+            {
+                SoundManagerScript.PlaySound("sword3");
+            }
         }
         else if(other.CompareTag("Mushroom"))
         {
