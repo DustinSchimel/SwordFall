@@ -20,8 +20,8 @@ public class RotateDiorama : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = rb.velocity.magnitude;
-
-        this.transform.Rotate(speed * .001f, 0f, 0f);
+        speed = rb.velocity.y;
+        Debug.Log(speed);
+        this.transform.Rotate(-speed * .005f, 0f, 0f);
     }
 }
