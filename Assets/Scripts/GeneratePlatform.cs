@@ -29,6 +29,10 @@ public class GeneratePlatform : MonoBehaviour
     private List<KeyValuePair<GameObject, int>> platformsToAge;
     private GameObject platformToRemove;
 
+    public GameObject mushroom;
+    public float mushroomSpawnChance;
+    public float mushroomYPosition;
+
     private enum PlatformTypes
     {
         LeftNormal,
@@ -124,6 +128,30 @@ public class GeneratePlatform : MonoBehaviour
                 lastPlatform = Instantiate(platform, new Vector3(10.6f, playerY - spawnDistance, 0f), Quaternion.identity);
 
                 Object.Destroy(lastPlatform, secondsuntilDestroy);
+            }
+
+            bool noEnemy = false;
+            for(int i = 2; i < 9; i++)
+            {
+                if(noEnemy)
+                {
+                    noEnemy = false;
+                    continue;
+                }
+                else
+                {
+                    if(Random.Range(0f, 100f) <= mushroomSpawnChance)
+                    {
+                        Debug.Log("Mushroom created");
+                        lastPlatform.transform.GetChild(i).gameObject.SetActive(false);
+                        Transform tempMushroom = Instantiate(mushroom, lastPlatform.transform).transform;
+                        Vector3 pos = lastPlatform.transform.GetChild(i).localPosition;
+                        pos.y = mushroomYPosition;
+                        tempMushroom.localPosition = pos;
+
+                        noEnemy = true;
+                    }
+                }
             }
         }
         else if(rand == 3 || rand == 4) //Bounce Mushroom platforms

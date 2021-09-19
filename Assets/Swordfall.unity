@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -284,7 +284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 437, y: -40}
+  m_AnchoredPosition: {x: 508.8, y: -27.3}
   m_SizeDelta: {x: 70.7962, y: 33.6214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177159644
@@ -309,12 +309,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 48d8b14f4eb14c245a9a4d68c6b91946, type: 3}
-    m_FontSize: 95
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -542,7 +542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 176, y: -31}
+  m_AnchoredPosition: {x: 452.1, y: -27.4}
   m_SizeDelta: {x: 66.053, y: 33.6214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412198133
@@ -567,7 +567,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 48d8b14f4eb14c245a9a4d68c6b91946, type: 3}
-    m_FontSize: 100
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -652,7 +652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4893508291332613613, guid: bb58f75f43b2257459b7863518c79d94, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb58f75f43b2257459b7863518c79d94, type: 3}
@@ -2718,7 +2718,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868461322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2000af724bd822a43b8c0ba5f00a1dfc, type: 3}
   m_Name: 
@@ -2755,6 +2755,9 @@ MonoBehaviour:
   platform: {fileID: 4893508291332613613, guid: bb58f75f43b2257459b7863518c79d94, type: 3}
   secondsuntilDestroy: 30
   platformSpawnDistanceRange: {x: 80, y: 100}
+  mushroom: {fileID: 8205139550299845392, guid: d703c43efe92fd4488ca5ac0b865adc9, type: 3}
+  mushroomSpawnChance: 10
+  mushroomYPosition: 1.12
 --- !u!82 &1868461326
 AudioSource:
   m_ObjectHideFlags: 0
