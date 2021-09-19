@@ -6,10 +6,11 @@ public class MovePlayer : MonoBehaviour
 {
     public float speed = 20f;
     public float spikeKnockback = 20f;
+    public float maxFallSpeed;
     private Animator animator;
 
     private Rigidbody rb;
-    private Collider collider;
+    private Collider playerCollider;
     private Vector3 movement;
     public GameObject swordHitbox;
     public float swordActiveTime;
@@ -23,7 +24,7 @@ public class MovePlayer : MonoBehaviour
     private void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        collider = GetComponent<Collider>();
+        playerCollider = GetComponent<Collider>();
         animator = GetComponent<Animator>();
         swingCd = true;
         swordHitbox.SetActive(false);
@@ -38,6 +39,12 @@ public class MovePlayer : MonoBehaviour
     private void FixedUpdate()
     {
         moveCharacter(movement);
+        Vector3 vel = rb.velocity;
+        if(vel.y < -maxFallSpeed)
+        {
+            vel.y = -maxFallSpeed;
+            rb.velocity = vel;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -84,7 +91,7 @@ public class MovePlayer : MonoBehaviour
     {
         if(collision.collider.CompareTag("SwordDownHitbox"))
         {
-            Physics.IgnoreCollision(collider, collision.collider);
+            Physics.IgnoreCollision(playerCollider, collision.collider);
         }
     }
 
