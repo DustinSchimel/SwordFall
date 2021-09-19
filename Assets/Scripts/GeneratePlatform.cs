@@ -89,9 +89,14 @@ public class GeneratePlatform : MonoBehaviour
         }*/
         
         System.Random rnd_gen = new System.Random();
-        int rnd_time = rnd_gen.Next(3, 6);
-
-        if (time_remaining <= 0) //Generate platforms at random times so that the next platform is generated 3-12
+        int rnd_time = rnd_gen.Next(2, 6);
+        bool is_lowest = false;
+        if (playerY < greatestPlayerY)
+        {
+            is_lowest = true;
+            greatestPlayerY = playerY;
+        }
+        if (time_remaining <= 0 && is_lowest) //Generate platforms at random times so that the next platform is generated 3-12
                   // normal platform heights below the prior platform, with 3-6 being favored. If
                   // the height is greater than 6, generate a pumpkin
         {
