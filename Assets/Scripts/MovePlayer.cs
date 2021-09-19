@@ -9,18 +9,24 @@ public class MovePlayer : MonoBehaviour
     private Animator animator;
 
     private Rigidbody rb;
+    private Collider collider;
     private Vector3 movement;
-
+    public GameObject swordHitbox;
+    public float swordActiveTime;
 
     private bool leftMovement = true;
     private bool rightMovement = true;
     private bool swingCd;
+    public float swingCooldownTime;
+    public float damageTime;
 
     private void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        collider = GetComponent<Collider>();
         animator = GetComponent<Animator>();
         swingCd = true;
+        swordHitbox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,7 +57,8 @@ public class MovePlayer : MonoBehaviour
             Debug.Log("Hit Spikes");
             rb.velocity = Vector3.zero;
             rb.AddForce(transform.up * spikeKnockback);
-            animator.SetTrigger("jump");
+            animator.SetTrigger("isJumping");
+            StartCoroutine(TakeDamage());
         }
         else if (other.CompareTag("TreeBranch"))
         {
@@ -70,6 +77,14 @@ public class MovePlayer : MonoBehaviour
         {
             //"Blur warp" a large way upwards and deduct from the score, and delete all existing
             // platforms and enemies
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.CompareTag("SwordDownHitbox"))
+        {
+            Physics.IgnoreCollision(collider, collision.collider);
         }
     }
 
@@ -97,7 +112,30 @@ public class MovePlayer : MonoBehaviour
         }
         if ((Input.GetAxis("Vertical") < 0) && swingCd)    // Down
         {
-            animator.SetTrigger("swing");
+            animator.SetTrigger("isSwinging");
+            StartCoroutine(ActivateSwordHitbox());
+            StartCoroutine(SwingCooldown());
         }
+    }
+
+    private IEnumerator ActivateSwordHitbox()
+    {
+        swordHitbox.SetActive(true);
+        yield return new WaitForSeconds(swordActiveTime);
+        swordHitbox.SetActive(false);
+    }
+
+    private IEnumerator SwingCooldown()
+    {
+        swingCd = false;
+        yield return new WaitForSeconds(swingCooldownTime);
+        swingCd = true;
+    }
+    private IEnumerator TakeDamage()
+    {
+        swordHitbox.SetActive(false);
+        swingCd = false;
+        yield return new WaitForSeconds(damageTime);
+        swingCd = true;
     }
 }

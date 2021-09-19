@@ -24,6 +24,12 @@ public class FollowPlayer : MonoBehaviour
         {
             cameraY = player.transform.position.y - 15;
         }
+        else if(gameObject.CompareTag("SwordDownHitbox"))
+        {
+            cameraX = player.transform.position.x;
+            cameraY = player.transform.position.y - 1f;
+            cameraZ = player.transform.position.z;
+        }
         else
         {
             cameraY = player.transform.position.y;

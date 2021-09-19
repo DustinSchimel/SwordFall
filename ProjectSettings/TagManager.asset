@@ -17,6 +17,7 @@ TagManager:
   - TreeBranch
   - LeafPile
   - Platform
+  - SwordDownHitbox
   layers:
   - Default
   - TransparentFX

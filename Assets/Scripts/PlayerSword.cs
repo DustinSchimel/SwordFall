@@ -5,27 +5,15 @@ using UnityEngine;
 public class PlayerSword : MonoBehaviour
 {
     public Rigidbody playerRigidbody;   //The Rigidbody of the player character
-
-    private void Awake()
-    {
-        playerRigidbody = transform.root.gameObject.GetComponent<Rigidbody>();
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            //Play the player's sword swing animation and activate the sword hitbox (a sphere
-            // directly below the player)
-            //*This might be better placed in a different script
-        }
-    }
+    public float bounceKnockback;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Spikes") || other.CompareTag("Corn"))
         {
             //Bounce up
+            playerRigidbody.velocity = Vector3.zero;
+            playerRigidbody.AddForce(transform.up * bounceKnockback);
         }
         else if(other.CompareTag("Mushroom"))
         {
