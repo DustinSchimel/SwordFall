@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSword : MonoBehaviour
 {
     public Rigidbody playerRigidbody;   //The Rigidbody of the player character
     public float bounceKnockback;
+
+    public Text score;
+    public int spikeBounceBonus;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +18,7 @@ public class PlayerSword : MonoBehaviour
             //Bounce up
             playerRigidbody.velocity = Vector3.zero;
             playerRigidbody.AddForce(transform.up * bounceKnockback);
+            score.text = (int.Parse(score.text) + spikeBounceBonus).ToString();
         }
         else if(other.CompareTag("Mushroom"))
         {

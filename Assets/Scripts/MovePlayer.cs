@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovePlayer : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class MovePlayer : MonoBehaviour
     private Vector3 movement;
     public GameObject swordHitbox;
     public float swordActiveTime;
+
+    private int hp = 3;
+    public Text hpText;
 
     private bool leftMovement = true;
     private bool rightMovement = true;
@@ -141,6 +145,16 @@ public class MovePlayer : MonoBehaviour
     }
     private IEnumerator TakeDamage()
     {
+        hp--;
+        if(hp <= 0)
+        {
+            //Game over
+        }
+        else
+        {
+            hpText.text = "HP: " + hp;
+        }
+
         playerCollider.enabled = false;
         swordHitbox.SetActive(false);
         swingCd = false;

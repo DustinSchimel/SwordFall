@@ -235,6 +235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 340265318}
   bounceKnockback: 600
+  score: {fileID: 177159644}
+  spikeBounceBonus: 100
 --- !u!114 &104646802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,8 +284,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2263, y: -47}
-  m_SizeDelta: {x: 160, y: 58.1374}
+  m_AnchoredPosition: {x: 514.3015, y: -21.241089}
+  m_SizeDelta: {x: 70.7962, y: 33.6214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177159644
 MonoBehaviour:
@@ -307,18 +309,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 48d8b14f4eb14c245a9a4d68c6b91946, type: 3}
-    m_FontSize: 90
+    m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 999999
 --- !u!222 &177159645
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -454,6 +456,7 @@ MonoBehaviour:
   maxFallSpeed: 50
   swordHitbox: {fileID: 104646796}
   swordActiveTime: 0.1
+  hpText: {fileID: 864320407}
   swingCooldownTime: 0.75
   damageTime: 1
 --- !u!95 &340265316
@@ -539,8 +542,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1983, y: -38}
-  m_SizeDelta: {x: 160, y: 58.1374}
+  m_AnchoredPosition: {x: 444.93484, y: -21.241089}
+  m_SizeDelta: {x: 66.053, y: 33.6214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412198133
 MonoBehaviour:
@@ -564,7 +567,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 48d8b14f4eb14c245a9a4d68c6b91946, type: 3}
-    m_FontSize: 100
+    m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -1194,8 +1197,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88, y: -38}
-  m_SizeDelta: {x: 160, y: 58.1374}
+  m_AnchoredPosition: {x: 37.7, y: -14.3}
+  m_SizeDelta: {x: 131.0977, y: 47.6355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &864320407
 MonoBehaviour:
@@ -1224,15 +1227,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'health image
-
-    health #'
+  m_Text: 'HP: 3'
 --- !u!222 &864320408
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2774,7 +2775,7 @@ MonoBehaviour:
   player: {fileID: 340265314}
   platform: {fileID: 4893508291332613613, guid: bb58f75f43b2257459b7863518c79d94, type: 3}
   secondsuntilDestroy: 30
-  platformSpawnDistanceRange: {x: 60, y: 80}
+  platformSpawnDistanceRange: {x: 80, y: 100}
 --- !u!82 &1868461326
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2939,6 +2940,10 @@ PrefabInstance:
     - target: {fileID: 1959898978945160726, guid: 142c26f24268e1647bb6ed4a6aead398, type: 3}
       propertyPath: m_Name
       value: Pumpkin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959898978945160726, guid: 142c26f24268e1647bb6ed4a6aead398, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 142c26f24268e1647bb6ed4a6aead398, type: 3}
@@ -3334,6 +3339,10 @@ PrefabInstance:
     - target: {fileID: 1959898978945160726, guid: 142c26f24268e1647bb6ed4a6aead398, type: 3}
       propertyPath: m_Name
       value: Pumpkin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959898978945160726, guid: 142c26f24268e1647bb6ed4a6aead398, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8808612811835960788, guid: 142c26f24268e1647bb6ed4a6aead398, type: 3}
       propertyPath: explosion

@@ -13,10 +13,13 @@ public class Controller : MonoBehaviour
     void Start()
     {
         lowest_point = player.transform.position.y;
+        score.text = 0.ToString();
     }
 
     private void FixedUpdate()
     {
+        count = int.Parse(score.text);
+
         // Increase player's score if they are descending
         if(player.transform.position.y < lowest_point)
         {
