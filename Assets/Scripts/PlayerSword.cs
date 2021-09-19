@@ -23,6 +23,10 @@ public class PlayerSword : MonoBehaviour
         else if(other.CompareTag("Mushroom"))
         {
             //Bounce up but take damage, and trigger the mushroom's particle spores
+            Debug.Log("Struck mushroom");
+            playerRigidbody.velocity = Vector3.zero;
+            playerRigidbody.AddForce(transform.up * bounceKnockback);
+            other.GetComponent<Animator>().SetTrigger("spores");
         }
         else if(other.CompareTag("BounceMushroom"))
         {
