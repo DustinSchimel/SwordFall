@@ -5,8 +5,10 @@ using UnityEngine;
 public class MovePlayer : MonoBehaviour
 {
     public float speed = 20f;
-    public Rigidbody rb;
-    public Vector3 movement;
+    public float spikeKnockback = 20f;
+    private Rigidbody rb;
+    private Vector3 movement;
+    
 
     private bool leftMovement = true;
     private bool rightMovement = true;
@@ -41,7 +43,8 @@ public class MovePlayer : MonoBehaviour
         if(other.CompareTag("Spikes") || other.CompareTag("Corn") 
             || other.CompareTag("Mushroom") || other.CompareTag("BounceMushroom"))
         {
-            //Get flung upwards and take damage
+            Debug.Log("Hit Spikes");
+            rb.AddForce(transform.up * spikeKnockback);
         }
         else if(other.CompareTag("TreeBranch"))
         {
