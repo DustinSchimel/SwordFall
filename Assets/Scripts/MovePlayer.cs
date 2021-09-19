@@ -19,6 +19,9 @@ public class MovePlayer : MonoBehaviour
     public int hp = 3;
     public Text hpText;
 
+    public GameObject inGameUI;
+    public GameObject gameOverUI;
+
     private bool leftMovement = true;
     private bool rightMovement = true;
     private bool swingCd;
@@ -149,7 +152,11 @@ public class MovePlayer : MonoBehaviour
         hp--;
         if(hp <= 0)
         {
-            //Game over
+            Time.timeScale = 0f;
+            int score = int.Parse(inGameUI.transform.GetChild(2).GetComponent<Text>().text);
+            inGameUI.SetActive(false);
+            gameOverUI.SetActive(true);
+            gameOverUI.transform.GetChild(1).GetComponent<Text>().text = score.ToString();
         }
         else
         {
