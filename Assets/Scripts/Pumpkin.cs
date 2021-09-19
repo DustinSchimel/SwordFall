@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pumpkin : MonoBehaviour
 {
+    public ParticleSystem explosion;
     public GameObject lifeUp;   //The prefab of the 1UP pickup
     public Vector2 lifeUpHorizontalForce;   //The range of horizontal force to apply to the 1UP
                                             // pickup upon release
@@ -12,27 +13,36 @@ public class Pumpkin : MonoBehaviour
 
     private int health = 3;    //The HP of this pumpkin
 
-    //Return whether the tree has 0 HP left
-    public void DeductHP()
+    // If hit with attack from the player, health decreases by 1;
+    private void OnCollisionEnter(Collision collision)
     {
-        health -= 1;
-        if (health == 2)
+        if (collision.gameObject.name == "NewPumpkinKid")
         {
-            //Small cracks in the pumpkin
-        }
-        else if (health == 1)
-        {
-            //Big cracks in the pumpkin
-        }
-        else if (health >= 0)
-        {
-            //Shatter the pumpkin, then destroy it
-            Destroy(gameObject);
-        }
-    }
 
+            health--;
+            if (health == 2)
+            {
+                //Small cracks in the pumpkin
+            }
+            else if (health == 1)
+            {
+                //Big cracks in the pumpkin
+            }
+            else if (health == 0)
+            {
+                //Shatter the pumpkin, then destroy it
+                Destroy(gameObject);
+            }
+            
+        }
+        Debug.Log("Hit a player");
+    }
+    
     private void OnDestroy()
     {
+        // Play particle explosion effect 
+        explosion.Play();
+
         //Create a 1UP pickup and send it in a random horizontal direction and downwards so that it
         // will arc back up towards the player
         GameObject tempLifeUp = Instantiate(lifeUp);

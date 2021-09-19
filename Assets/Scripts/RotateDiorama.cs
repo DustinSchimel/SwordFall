@@ -21,7 +21,6 @@ public class RotateDiorama : MonoBehaviour
     void Update()
     {
         speed = rb.velocity.y;
-        Debug.Log(speed);
         this.transform.Rotate(-speed * .005f, 0f, 0f);
     }
 }
