@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MovePlayer : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class MovePlayer : MonoBehaviour
     public float swordActiveTime;
 
     public int hp = 3;
-    public Text hpText;
+    public TMP_Text hpText;
 
     public GameObject inGameUI;
     public GameObject gameOverUI;
