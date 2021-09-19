@@ -44,6 +44,7 @@ public class PlayerSword : MonoBehaviour
             playerRigidbody.AddForce(transform.up * bounceKnockback);
             other.GetComponent<Animator>().SetTrigger("spores");
             movePlayer.TakeDamage();
+            SoundManagerScript.PlaySound("mushroom1");
         }
         else if(other.CompareTag("BounceMushroom"))
         {

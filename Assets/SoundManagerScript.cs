@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip swordHitSound1, swordHitSound2, swordHitSound3, ouchSound1, ouchSound2;
+    public static AudioClip swordHitSound1, swordHitSound2, swordHitSound3, ouchSound1, ouchSound2, mushroomSound1;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -15,6 +15,7 @@ public class SoundManagerScript : MonoBehaviour
         swordHitSound3 = Resources.Load<AudioClip>("sword3");
         ouchSound1 = Resources.Load<AudioClip>("ouch1");
         ouchSound2 = Resources.Load<AudioClip>("ouch2");
+        mushroomSound1 = Resources.Load<AudioClip>("mushroom1");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -43,6 +44,9 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "ouch2":
                 audioSrc.PlayOneShot(ouchSound2);
+                break;
+            case "mushroom1":
+                audioSrc.PlayOneShot(mushroomSound1);
                 break;
         }
     }
