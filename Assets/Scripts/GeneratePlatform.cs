@@ -5,6 +5,8 @@ using System.Linq;
 
 public class GeneratePlatform : MonoBehaviour
 {
+    float time_remaining = 0;
+
     public GameObject player;   //Used to get info on where to spawn platforms based on player Y
     public GameObject platform;
     public float secondsuntilDestroy;
@@ -64,14 +66,14 @@ public class GeneratePlatform : MonoBehaviour
         //Spawn three starting platforms on-screen
         for(int i = 0; i < 3; i++)
         {
-            CreatePlatform(PlatformSpawnDistance / 4 * (i + 1));
+            //CreatePlatform(PlatformSpawnDistance / 4 * (i + 1));
         }
     }
 
     private void Update()
     {
         playerY = player.transform.position.y;
-
+        /*
         if (playerY < greatestPlayerY)  // Player is currently the lowest they have been, generation is now enabled
         {
             greatestPlayerY = playerY;
@@ -84,13 +86,21 @@ public class GeneratePlatform : MonoBehaviour
             {
                 CreatePlatform(PlatformSpawnDistance);
             }
-        }
+        }*/
+        
+        System.Random rnd_gen = new System.Random();
+        int rnd_time = rnd_gen.Next(3, 6);
 
-        if (false) //Generate platforms at random times so that the next platform is generated 3-12
+        if (time_remaining <= 0) //Generate platforms at random times so that the next platform is generated 3-12
                   // normal platform heights below the prior platform, with 3-6 being favored. If
                   // the height is greater than 6, generate a pumpkin
         {
+            time_remaining = rnd_time;
             CreatePlatform(PlatformSpawnDistance);
+        }
+        else
+        {
+            time_remaining -= Time.deltaTime;
         }
     }
 
