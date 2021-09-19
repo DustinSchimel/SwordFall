@@ -6,7 +6,7 @@ using System.Linq;
 public class GeneratePlatform : MonoBehaviour
 {
     public GameObject player;   //Used to get info on where to spawn platforms based on player Y
-    public GameObject spikePlatform;
+    public GameObject platform;
     public float secondsuntilDestroy;
 
     private int platformTypesLength;    //The number of possible platform types
@@ -87,7 +87,7 @@ public class GeneratePlatform : MonoBehaviour
                 //Randomly create a 1/3 length spider web or tree branch in the gap next to the
                 // platform
 
-                lastPlatform = Instantiate(spikePlatform, new Vector3(1260f, playerY - 150f, -1100f), Quaternion.identity);
+                lastPlatform = Instantiate(platform, new Vector3(-10.6f, playerY - 150f, 0f), Quaternion.identity);
 
                 Object.Destroy(lastPlatform, secondsuntilDestroy);
             }
@@ -96,7 +96,7 @@ public class GeneratePlatform : MonoBehaviour
                 //Randomly create a 1/3 length spider web or tree branch in the gap next to the
                 // platform
 
-                lastPlatform = Instantiate(spikePlatform, new Vector3(1300f, playerY - 150f, -1100f), Quaternion.identity);
+                lastPlatform = Instantiate(platform, new Vector3(0, playerY - 150f, 0f), Quaternion.identity);
 
                 Object.Destroy(lastPlatform, secondsuntilDestroy);
             }
@@ -105,7 +105,7 @@ public class GeneratePlatform : MonoBehaviour
                 //Randomly create a 1/4 length spider web or tree branch in each gap next to the
                 // platform
 
-                lastPlatform = Instantiate(spikePlatform, new Vector3(1340f, playerY - 150f, -1100f), Quaternion.identity);
+                lastPlatform = Instantiate(platform, new Vector3(10.6f, playerY - 150f, 0f), Quaternion.identity);
 
                 Object.Destroy(lastPlatform, secondsuntilDestroy);
             }
