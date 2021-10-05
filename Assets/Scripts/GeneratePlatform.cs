@@ -91,7 +91,7 @@ public class GeneratePlatform : MonoBehaviour
         System.Random rnd_gen = new System.Random();
         int rnd_time = rnd_gen.Next(2, 6);
         bool is_lowest = false;
-        if (playerY < greatestPlayerY)
+        if ((playerY) < (greatestPlayerY - 10))
         {
             is_lowest = true;
             greatestPlayerY = playerY;
